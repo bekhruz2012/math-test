@@ -1,0 +1,232 @@
+1.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Тест по математике</title>
+  <meta charset="UTF-8">
+  <link style="width:30px; height:30px;" rel="shortcut icon" type="images/png" href="images/Снимок экрана от 2023-03-18 23-35-16.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+</head>
+
+<style>
+  body {
+    background-image: url(images/istockphoto-1194350171-1024x1024.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+  }
+
+</style>
+
+<body>
+  <div id="ak">
+    <h1>
+      <div class="container text-center">
+        <div class="container text-black">
+          <h1>Тест по математике</h1>
+          <div class="row">
+            <div class="col-10">
+              <form method="post" onsubmit="event.preventDefault();" id="test-form">
+                <div class="row">
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test1"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer1" id="answer1" />
+                  </div>
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test2"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer2" id="answer2" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test3"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer3" id="answer3" />
+                  </div>
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test4"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer4" id="answer4" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test5"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer5" id="answer5" />
+                  </div>
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test6"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer6" id="answer6" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test7"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer7" id="answer7" />
+                  </div>
+                  <div class="col col-6">   
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test8"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer8" id="answer8" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test9"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer9" id="answer9" />
+                  </div>
+                  <div class="col col-6">
+                    <label for="exampleInputEmail1" class="form-label">
+                      <span id="test10"></span>
+                    </label>
+                    <input type="text" class="form-control" name="answer10" id="answer10" />
+                  </div>
+                </div>
+                <p>&nbsp;</p>
+                <div class="row">
+                  <div class="col col-12" id="correct"></div>
+                </div>
+
+                <p>&nbsp;</p>
+                <div class="container text-center"></div>
+                <div class="row">
+                  <div class="col col-12">
+                    <button type="button"  class="btn btn-primary" onclick="check();">
+                      Отправить ответы
+                    </button>
+                    <button type="button" class="btn btn-warning" onclick="generateTests()">
+                      Создать новый тест
+                    </button>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </h1>
+  </div>
+</body>
+
+  <script type="text/javascript">
+    var tests = [];
+
+    function setTest(id, n1, n2) {
+      tests[id] = n1 * n2;
+      document.getElementById(id).innerHTML =
+        "<strong>" + n1 + " * " + n2 + "</strong>";
+    }
+
+    function getValue(id) {
+      return document.getElementById(id).value;
+    }
+
+    function check() {
+      var answer1 = getValue("answer1");
+      var answer2 = getValue("answer2");
+      var answer3 = getValue("answer3");
+      var answer4 = getValue("answer4");
+      var answer5 = getValue("answer5");
+      var answer6 = getValue("answer6");
+      var answer7 = getValue("answer7");
+      var answer8 = getValue("answer8");
+      var answer9 = getValue("answer9");
+      var answer10 = getValue("answer10");
+
+      var correct = 0;
+      if (answer1 == tests["test1"]) {
+        correct++;
+      }
+
+      if (answer2 == tests["test2"]) {
+        correct++;
+      }
+
+      if (answer3 == tests["test3"]) {
+        correct++;
+      }
+
+      if (answer4 == tests["test4"]) {
+        correct++;
+      }
+
+      if (answer5 == tests["test5"]) {
+        correct++;
+      }
+
+      if (answer6 == tests["test6"]) {
+        correct++;
+      }
+
+      if (answer7 == tests["test7"]) {
+        correct++;
+      }
+
+      if (answer8 == tests["test8"]) {
+        correct++;
+      }
+
+      if (answer9 == tests["test9"]) {
+        correct++;
+      }
+
+      if (answer10 == tests["test10"]) {
+        correct++;
+      }
+
+      setCorrectMessage(correct);
+    }
+
+    function resetForm() {
+      document.getElementById("test-form").reset();
+      document.getElementById("correct").innerHTML = "";
+    }
+
+    function setCorrectMessage(correct) {
+      document.getElementById("correct").innerHTML =
+        "<h5>Correct: " + correct + "</h5>";
+    }
+
+    function generateRandomNumber(max) {
+      return Math.ceil(Math.random() * max);
+    }
+
+    function generateTests() {
+      resetForm();
+      setTest("test1", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test2", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test3", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test4", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test5", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test6", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test7", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test8", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test9", generateRandomNumber(10), generateRandomNumber(10));
+      setTest("test10", generateRandomNumber(10), generateRandomNumber(10));
+    }
+
+    generateTests();
+  </script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</div>
+
+</html>
